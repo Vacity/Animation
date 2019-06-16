@@ -148,26 +148,117 @@
     to { transform: scale(1.2) }
 }
 
-.process {
-    width: 100px;
-    height: 20px;
+.eyes {
+    width: 60px;
+    height: 48px;
     border: 2px solid #fff;
-    border-radius: 2px; 
+    border-radius: 50%; 
     position: relative;
 }
 
-.process:before {
+.eyes:before, .eyes:after {
     position: absolute;
     content: '';
-    height: 18px;
-    top: 1px;
-    left: 1px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
     background: #fff;
-    animation: process-wave-move 5s linear infinite;
+    top: 10px;
+    left: 2px;
+    animation: eye-move 4s linear infinite alternate;
 }
 
-@keyframes process-wave-move {
-    from {width:0}
-    to {width: 100px}
+.eyes:after {
+    left:30px;
 }
 
+@keyframes eye-move {
+   20% { transform: translateX(2px) translateY(3px) }
+   50% { transform: translateX(5px) translateY(6px) }
+   70% { transform: translateX(7px) translateY(3px) }
+   100% { transform: translateX(10px) translateY(0px) }
+}
+
+.fan {
+    width: 10px;
+    height: 50px;
+    background: #fff;
+}
+
+.scissors-container {
+    display: flex;
+}
+
+.scissors {
+    width: 2px;
+    height: 45px;
+    position: relative;
+    background: #fff;
+    transform-origin: 0 28px;
+   
+}
+
+.scissors-left {
+    animation: scissors-left-move 1.5s infinite alternate linear;
+}
+
+.scissors-right {
+    animation: scissors-right-move 1.5s infinite alternate linear;
+}
+
+.scissors:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    top: 45px;
+    left: -5px;
+}
+
+@keyframes scissors-left-move {
+    from {transform: rotate(-35deg)}
+    to {transform: rotate(-5deg)}
+}
+
+@keyframes scissors-right-move {
+    from {transform: rotate(35deg)}
+    to {transform: rotate(5deg)}
+}
+
+.paper {
+    width: 50px;
+    height: 70px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+.paper .paper-line {
+    width: 80%;
+    height: 2px;
+    background: #59488b;
+    border-radius: 5px;
+}
+
+.paper:after {
+    content: '';
+    width: 4px;
+    height: 43px;
+    background: #000;
+    position: absolute;
+    animation: pencil-move 5s linear infinite;
+}
+
+@keyframes pencil-move {
+    0% {transform: rotate(-30deg) translateX(-20px) translateY(-10px)}
+    20% { transform: rotate(-30deg) translateX(30px) translateY(15px)}
+    40% { transform: rotate(-30deg) translateX(-20px) translateY(15px)}
+    60% { transform: rotate(-30deg) translateX(20px) translateY(35px)}
+    80% { transform: rotate(-30deg) translateX(-30px) translateY(30px)}
+    100% { transform: rotate(-30deg) translateX(10px) translateY(50px)}
+}

@@ -16,8 +16,18 @@ function App() {
         </div>
         <div className='icon-line'>
           <div className='search'></div>
-          <div className='process'></div>
-          <div className='battery'></div>
+          <div className='eyes'></div>
+          <div className='scissors-container'>
+            <div className='scissors scissors-left'></div>
+            <div className='scissors scissors-right'></div>
+          </div>
+        </div>
+        <div className='icon-line'>
+          <div className='paper'>
+            <div className='paper-line'></div>
+            <div className='paper-line'></div>
+            <div className='paper-line'></div>
+          </div>
         </div>
       </div>
       <div className='container' style={{background:'#333'}}>
