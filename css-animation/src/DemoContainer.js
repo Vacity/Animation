@@ -23,12 +23,15 @@ export default class DemoContainer extends React.Component {
     }
     
     render() {
+        const animation = this.state.run ? this.props.animation: '0';
+        const style = {...this.props.additionStyle,animation:animation};
+
         return (
         <div className='demo-container'  onClick={()=>{this.runAnim();}}>
             <div className='demo-left'>
                 <span className='demo-title'>{this.props.title}</span>
                 <div>
-                    <div className='dmeo-item' style={this.state.run?{animation: this.props.animation}:{}} onAnimationEnd={()=>{this.endRun();}}>
+                    <div className='dmeo-item' style={style} onAnimationEnd={()=>{this.endRun();}}>
                         {this.props.children}
                     </div>         
                 </div>

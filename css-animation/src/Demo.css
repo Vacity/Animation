@@ -32,19 +32,24 @@
     padding: 0 20px;
 }
 
-@keyframes move1{
+@keyframes move1 {
     from {transform: translateX(0px);}
     to {transform: translateX(100px);}
 }
 
-@keyframes move2{
+@keyframes move2 {
     from {transform: translateY(0px);}
     to {transform: translateY(100px);}
 }
 
-@keyframes move3{
+@keyframes move3 {
     0% {transform: scale(0.5);}
     50% {transform: scale(3);}
     100% {transform: scale(1);}
+}
+
+@keyframes move4 {
+    0% {transform: rotate(20deg);}
+    100% {transform: rotate(-90deg);}
 }
 

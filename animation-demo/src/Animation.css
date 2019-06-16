@@ -1,0 +1,173 @@
+.clock {
+    width: 32px;
+    height: 32px;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+    border-radius: 50%;
+    position: relative;
+}
+
+.clock:after, .clock:before {
+    position: absolute;
+    content: "";
+    background-color: #fff;
+        transform-origin: 1px 1px;
+}
+
+.clock:before {
+    width: 2px;
+    height: 8px;
+    top: 15px;
+    left: 15px;
+    animation: clock-hour-move 8s linear infinite;
+}
+
+.clock:after {
+    width: 2px;
+    height: 12px;
+    top: 15px;
+    left: 15px;
+    animation: clock-minute-move 2s linear infinite;
+}
+
+@keyframes clock-hour-move {
+    0% {transform:rotate(0deg)}
+    100% {transform:rotate(360deg)}
+}
+
+@keyframes clock-minute-move {
+    0% {transform:rotate(0deg)}
+    100% {transform:rotate(360deg)}
+}
+
+.battery {
+    width: 35px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-radius: 2px; 
+    position: relative;
+}
+
+.battery:after, .battery:before {
+    position: absolute; 
+    background: #fff;
+    content: '';
+
+}
+
+.battery:before {
+    width: 3px;
+    height: 10px;
+    top: 3px;
+    left: 38px;
+}
+
+.battery:after {
+    width: 1px;
+    height: 12px;
+    top: 2px;
+    left: 1px;
+    animation: battery-move 3s infinite linear;
+}
+
+@keyframes battery-move {
+    from {width: 1px}
+    to {width: 33px}
+}
+
+.coffee {
+    width: 20px;
+    height: 28px;
+    border: 1px solid #fff;
+    border-radius: 0 0 6px 6px; 
+    position: relative;
+}
+
+.coffee:after, .coffee:before {
+    position: absolute; 
+    content: '';
+}
+
+.coffee:after {
+    width: 8px;
+    height:15px;
+    left: 20px;
+    border: 1px solid #fff;
+    border-left: 0; 
+    border-radius: 0px 15px 15px 0px; 
+}
+
+.coffee:before {
+    background: #fff;
+    width: 1px;
+    height:0;
+    top: -12px;
+    left: 4px;
+    box-shadow: 5px 0px 0px 0px rgba(255,255,255,1), 5px -5px 0px 0px rgba(255,255,255,1), 10px 0px 0px 0px rgba(255,255,255,1);
+    animation: coffee-move 2s infinite ease-in-out;
+}
+
+@keyframes coffee-move {
+    from {height:0}
+    to { height:7px }
+}
+
+.search {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    animation: search-move 1s infinite alternate;
+  
+}
+
+.search:before, .search:after {
+    position: absolute;
+    content: '';
+}
+
+.search:after {
+    width: 2px;
+    height: 24px;
+    background: #fff;
+    transform: rotate(-40deg);
+    left: 29px;
+    top: 24px;
+}
+
+.search:before {
+    content: 'byte';  
+    left: 2px; 
+    top: 5px;
+    text-align: center;
+    font-size: 1px;
+}
+
+@keyframes search-move {
+    from { transform: scale(0.8) }
+    to { transform: scale(1.2) }
+}
+
+.process {
+    width: 100px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 2px; 
+    position: relative;
+}
+
+.process:before {
+    position: absolute;
+    content: '';
+    height: 18px;
+    top: 1px;
+    left: 1px;
+    background: #fff;
+    animation: process-wave-move 5s linear infinite;
+}
+
+@keyframes process-wave-move {
+    from {width:0}
+    to {width: 100px}
+}
+
